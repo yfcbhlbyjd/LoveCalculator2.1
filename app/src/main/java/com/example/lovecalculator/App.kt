@@ -1,19 +1,17 @@
-package com.geektech.lovecalculator
+package com.example.lovecalculator
 
 import android.app.Application
 import androidx.room.Room
-import com.geektech.lovecalculator.Room.AppDataBase
+import com.example.lovecalculator.AppDataBase
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App:Application() {
-    companion object{
-        lateinit var db: AppDataBase
-    }
+class App: Application() {
+
+
 
     override fun onCreate() {
         super.onCreate()
-        db = Room.databaseBuilder(this,AppDataBase::class.java,"love-base").allowMainThreadQueries().build()
-    }
 
+    }
 }

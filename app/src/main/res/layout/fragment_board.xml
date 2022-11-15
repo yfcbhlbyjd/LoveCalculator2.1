@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".Board.BoardFragment">
+    android:orientation="vertical">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
@@ -20,21 +19,6 @@
         android:textAllCaps="true"
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
-        android:id="@+id/worm_dots_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:dotsColor="@color/gray"
-        app:dotsStrokeColor="@color/black"
-        app:dotsCornerRadius="8dp"
-        app:dotsSize="12dp"
-        app:dotsSpacing="4dp"
-        app:dotsStrokeWidth="2dp"
-        android:layout_marginBottom="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </LinearLayout>

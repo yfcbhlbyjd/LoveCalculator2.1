@@ -1,16 +1,14 @@
-package com.geektech.lovecalculator
+package com.example.lovecalculator
 
 import android.content.Context
+import android.content.SharedPreferences
 
-class Prefs (){
-    fun saveState(context: Context) {
-        val preferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
-        preferences.edit().putBoolean("isShow", true).apply()
+class Prefs(context: Context) {
+    private var preferences :SharedPreferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
+
+    fun saveState(){
+        preferences.edit().putBoolean("isShown",true).apply()
     }
-
-    fun isShown(context: Context): Boolean {
-        val preferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
-        return preferences.getBoolean("isShow", false)
-    }
-
-}
+    fun isShown():Boolean{
+        return preferences.getBoolean("isShown",false)
+    }}

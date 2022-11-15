@@ -1,22 +1,28 @@
-package com.geektech.lovecalculator44
+package com.example.lovecalculator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import com.example.lovecalculator.R
 import com.example.lovecalculator.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var navController: NavController
+    private lateinit var prefs:Prefs
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        navController = findNavController(R.id.nav_host_fragment)
+
+
+        prefs.saveState()
+        if (prefs.isShown()){
+            navController.navigate(R.id.boardFragment)
+        }
+
     }
 }
